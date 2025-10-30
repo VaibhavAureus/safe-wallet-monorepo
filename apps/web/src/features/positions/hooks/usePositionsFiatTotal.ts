@@ -1,11 +1,11 @@
 import usePositions from '@/features/positions/hooks/usePositions'
 
 const usePositionsFiatTotal = () => {
-  const { data: protocols } = usePositions()
+  const { data: appBalances } = usePositions()
 
-  if (!protocols) return 0
+  if (!appBalances) return 0
 
-  return protocols.reduce((acc, protocol) => acc + Number(protocol.fiatTotal), 0)
+  return appBalances.reduce((acc, appBalance) => acc + parseFloat(appBalance.balanceFiat || '0'), 0)
 }
 
 export default usePositionsFiatTotal

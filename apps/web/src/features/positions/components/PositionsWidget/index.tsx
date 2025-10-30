@@ -177,13 +177,13 @@ const PositionsWidget = () => {
         {protocols.length === 0 ? (
           <PositionsEmpty entryPoint="Dashboard" />
         ) : (
-          protocols.map((protocol, protocolIndex) => {
-            const protocolValue = Number(protocol.fiatTotal) || 0
+          protocols.map((appBalance, protocolIndex) => {
+            const protocolValue = parseFloat(appBalance.balanceFiat || '0')
             const isLast = protocolIndex === protocols.length - 1
 
             return (
               <Accordion
-                key={protocol.protocol}
+                key={appBalance.appInfo.name}
                 disableGutters
                 elevation={0}
                 variant="elevation"
@@ -193,7 +193,7 @@ const PositionsWidget = () => {
                 onChange={(_, expanded) => {
                   if (expanded) {
                     trackEvent(POSITIONS_EVENTS.POSITION_EXPANDED, {
-                      [MixpanelEventParams.PROTOCOL_NAME]: protocol.protocol,
+                      [MixpanelEventParams.PROTOCOL_NAME]: appBalance.appInfo.name,
                       [MixpanelEventParams.LOCATION]: POSITIONS_LABELS.dashboard,
                       [MixpanelEventParams.AMOUNT_USD]: protocolValue,
                     })
@@ -222,25 +222,42 @@ const PositionsWidget = () => {
                     }),
                   }}
                 >
-                  <PositionsHeader protocol={protocol} fiatTotal={positionsFiatTotal} />
+                  <PositionsHeader appBalance={appBalance} fiatTotal={positionsFiatTotal} />
                 </AccordionSummary>
 
                 <AccordionDetails sx={{ px: 1.5 }}>
-                  {protocol.items.map((position, idx) => {
-                    return (
-                      <Box key={position.name}>
-                        <Typography variant="body2" fontWeight="bold" mb={1} mt={idx !== 0 ? 2 : 0}>
-                          {position.name}
-                        </Typography>
+                  {appBalance.groups.map((group, groupIndex) => (
+                    <Box key={groupIndex} sx={{ mb: groupIndex < appBalance.groups.length - 1 ? 2 : 0 }}>
+                      <Typography variant="body2" fontWeight="bold" mb={1}>
+                        {group.name}
+                      </Typography>
 
-                        <Divider sx={{ opacity: 0.5 }} />
+                      <Divider sx={{ opacity: 0.5, mb: 1 }} />
 
-                        {position.items.map((item) => {
-                          return <Position item={item} key={`${item.tokenInfo.name}-${item.position_type}`} />
-                        })}
-                      </Box>
-                    )
-                  })}
+                      {group.items.map((position) => {
+                        return (
+                          <Position
+                            item={{
+                              balance: position.balance,
+                              fiatBalance: position.balanceFiat || '0',
+                              fiatConversion: '0',
+                              tokenInfo: {
+                                address: position.tokenInfo.address,
+                                decimals: position.tokenInfo.decimals,
+                                logoUri: position.tokenInfo.logoUri || '',
+                                name: position.tokenInfo.name,
+                                symbol: position.tokenInfo.symbol,
+                                type: position.tokenInfo.type,
+                              },
+                              fiatBalance24hChange: position.priceChangePercentage1d || null,
+                              position_type: position.type as any,
+                            }}
+                            key={`${position.key || position.name || position.tokenInfo.name}-${position.type}`}
+                          />
+                        )
+                      })}
+                    </Box>
+                  ))}
                 </AccordionDetails>
               </Accordion>
             )

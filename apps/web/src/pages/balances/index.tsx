@@ -23,7 +23,7 @@ const Balances: NextPage = () => {
   const toggleShowHiddenAssets = () => setShowHiddenAssets((prev) => !prev)
   const isStakingBannerVisible = useIsStakingBannerVisible()
 
-  const fiatTotal = balances.fiatTotal ? Number(balances.fiatTotal) : undefined
+  const tokensFiatTotal = balances.tokensFiatTotal ? Number(balances.tokensFiatTotal) : undefined
 
   return (
     <>
@@ -49,7 +49,7 @@ const Balances: NextPage = () => {
         ) : (
           <>
             <Box mb={2}>
-              <TotalAssetValue fiatTotal={fiatTotal} />
+              <TotalAssetValue fiatTotal={tokensFiatTotal} />
             </Box>
             <AssetsTable setShowHiddenAssets={setShowHiddenAssets} showHiddenAssets={showHiddenAssets} />
           </>

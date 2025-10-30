@@ -24,7 +24,7 @@ const ImageFallback = ({ src, fallbackSrc, fallbackComponent, ...props }: ImageF
     <img
       {...props}
       alt={props.alt || ''}
-      src={isError || src === undefined ? fallbackSrc : src}
+      src={isError || src === undefined || src === '' ? fallbackSrc : src}
       onError={() => setIsError(true)}
     />
   )
