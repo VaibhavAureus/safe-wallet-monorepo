@@ -14,6 +14,10 @@ export enum MixpanelEvent {
   NATIVE_SWAP_VIEWED = 'Native Swap Viewed',
   SAFE_LABS_TERMS_ACCEPTED = 'Safe Labs Terms Accepted',
   SIDEBAR_CLICKED = 'Sidebar Clicked',
+  TRANSACTION_EXECUTED = 'Transaction Executed',
+  TRANSACTION_EXECUTED_VIA_PARENT = 'Transaction Executed Via Parent',
+  TRANSACTION_EXECUTED_IN_PARENT = 'Transaction Executed In Parent',
+  TRANSACTION_EXECUTED_VIA_ROLE = 'Transaction Executed Via Role',
 }
 
 export enum MixpanelUserProperty {
@@ -51,6 +55,7 @@ export enum MixpanelEventParams {
   APP_URL = 'App URL',
   DATE_RANGE = 'Date Range',
   SIDEBAR_ELEMENT = 'Sidebar Element',
+  TRANSACTION_TYPE = 'Transaction Type',
 }
 
 export enum SafeAppLaunchLocation {
