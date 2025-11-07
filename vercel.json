@@ -1,7 +1,7 @@
 {
-  "buildCommand": "yarn workspace @safe-global/web build",
+  "buildCommand": "corepack enable && corepack prepare yarn@4.6.0 --activate && yarn install --immutable && yarn workspace @safe-global/web build",
   "outputDirectory": "apps/web/out",
-  "installCommand": "yarn install",
+  "installCommand": "corepack enable && corepack prepare yarn@4.6.0 --activate && yarn install --immutable",
   "framework": "nextjs"
 }
 
