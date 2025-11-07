@@ -54,19 +54,26 @@ const useMixpanel = () => {
   useEffect(() => {
     if (!isMixpanelEnabled) return
 
-    if (isAnalyticsEnabled) {
-      mixpanel.opt_in_tracking()
-      if (!IS_PRODUCTION) {
-        console.info('[Mixpanel] - User opted in')
+    try {
+      if (isAnalyticsEnabled) {
+        if (mixpanel && typeof mixpanel.opt_in_tracking === 'function') {
+          mixpanel.opt_in_tracking()
+          if (!IS_PRODUCTION) {
+            console.info('[Mixpanel] - User opted in')
+          }
+        }
+      } else {
+        if (mixpanel && typeof mixpanel.opt_out_tracking === 'function') {
+          mixpanel.opt_out_tracking()
+        }
+        if (!IS_PRODUCTION) {
+          console.info('[Mixpanel] - User opted out')
+        }
       }
-    } else {
-      try {
-        mixpanel.opt_out_tracking()
-      } catch {
-        // do nothing, opt_out_tracking throws an error if tracking was never enabled
-      }
+    } catch (error) {
+      // Silently fail if Mixpanel is not initialized
       if (!IS_PRODUCTION) {
-        console.info('[Mixpanel] - User opted out')
+        console.warn('[Mixpanel] - Failed to set tracking preference:', error)
       }
     }
   }, [isMixpanelEnabled, isAnalyticsEnabled])

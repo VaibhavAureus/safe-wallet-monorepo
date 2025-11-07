@@ -12,14 +12,14 @@ const MetaTags = ({ prefetchUrl }: { prefetchUrl: string }) => (
     {!IS_PRODUCTION && <meta name="robots" content="noindex" />}
 
     {/* Social sharing */}
-    <meta name="og:image" content="https://app.safe.global/images/social-share.png" />
+    <meta name="og:image" content="/images/social-share.png" />
     <meta name="og:description" content={descriptionText} />
     <meta name="og:title" content={titleText} />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@safe" />
+    <meta name="twitter:site" content="@aureus" />
     <meta name="twitter:title" content={titleText} />
     <meta name="twitter:description" content={descriptionText} />
-    <meta name="twitter:image" content="https://app.safe.global/images/social-share.png" />
+    <meta name="twitter:image" content="/images/social-share.png" />
 
     {/* CSP */}
     <meta httpEquiv="Content-Security-Policy" content={ContentSecurityPolicy} />
@@ -36,7 +36,7 @@ const MetaTags = ({ prefetchUrl }: { prefetchUrl: string }) => (
     {/* PWA primary color and manifest */}
     <meta name="theme-color" content={lightPalette.background.main} media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content={darkPalette.background.main} media="(prefers-color-scheme: dark)" />
-    <link rel="manifest" href="/safe.webmanifest" {...(IS_BEHIND_IAP && { crossOrigin: 'use-credentials' })} />
+    <link rel="manifest" href="/aureus.webmanifest" {...(IS_BEHIND_IAP && { crossOrigin: 'use-credentials' })} />
 
     {/* Favicons */}
     <link rel="shortcut icon" href="/favicons/favicon.ico" />

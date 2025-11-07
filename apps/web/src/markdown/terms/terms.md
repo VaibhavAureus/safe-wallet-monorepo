@@ -1,6 +1,6 @@
 # Terms and Conditions
 
-Last updated: October, 2025
+Last updated: November, 2025
 
 [1\. What is the scope of the Terms?](#1.-what-is-the-scope-of-the-terms?)
 
@@ -66,13 +66,13 @@ Last updated: October, 2025
 
 # 1\. What is the scope of the Terms? {#1.-what-is-the-scope-of-the-terms?}
 
-These Terms and Conditions (“**Terms**”) become part of any contract (“**Agreement**”) between you (“**you**”, “**yours**” or “**User**”) and Safe Labs GmbH (“**Safe Labs**”, “**we**”, “**our**” or “**us**”) provided we made these Terms accessible to you prior to entering into the Agreement and you consent to these Terms. We are a limited liability company registered with the commercial register of Berlin Charlottenburg under company number HRB 270980 B, with its registered office at Unter den Linden 10, 10117 Berlin. 
+These Terms and Conditions ("**Terms**") become part of any contract ("**Agreement**") between you ("**you**", "**yours**" or "**User**") and Aureus Safe ("**Aureus Safe**", "**we**", "**our**" or "**us**") provided we made these Terms accessible to you prior to entering into the Agreement and you consent to these Terms. 
 
-For the avoidance of doubt, this Agreement is exclusively concluded with Safe Labs. Through this Agreement of the use of our Services, no contractual relationship whatsoever is concluded with Core Contributors GmbH. Further, please note that Safe Labs is not a legal successor of Core Contributors GmbH and does not assume any liability or responsibility for Core Contributors GmbH.
+For the avoidance of doubt, this Agreement is exclusively concluded with Aureus Safe. Through this Agreement of the use of our Services, no contractual relationship whatsoever is concluded with Core Contributors GmbH. Further, please note that Aureus Safe is not a legal successor of Core Contributors GmbH and does not assume any liability or responsibility for Core Contributors GmbH.
 
 The Agreement is concluded by using the Mobile App, Web App and/or Browser Extension subject to these Terms. The use of our Services is only permitted to legal entities, partnerships and natural persons with unlimited legal capacity. In particular, minors are prohibited from using our Services.
 
-The application of your general terms and conditions is excluded. Your deviating, conflicting or supplementary general terms and conditions shall only become part of the Agreement if and to the extent that Safe Labs has expressly agreed to their application in writing. This consent requirement shall apply in any case, even if for example Safe Labs, being aware of your general terms and conditions, accepts payments by the contractual partner without reservations.
+The application of your general terms and conditions is excluded. Your deviating, conflicting or supplementary general terms and conditions shall only become part of the Agreement if and to the extent that Aureus Safe has expressly agreed to their application in writing. This consent requirement shall apply in any case, even if for example Aureus Safe, being aware of your general terms and conditions, accepts payments by the contractual partner without reservations.
 
 We reserve the right to change these Terms at any time and without giving reasons, while considering and weighing your interests. The new Terms will be communicated to you in advance. If you do not accept the new Terms, you are no longer entitled to use the Services. 
 
@@ -100,21 +100,21 @@ Our services (“**Services**”) primarily consist of enabling users to create 
 
 1. “**Safe Account**”
 
-A Safe Account is a modular, self-custodial (i.e. not supervised by us) smart contract-based wallet not provided by Safe Labs. Safe Accounts are open-source released under LGPL-3.0.
+A Safe Account is a modular, self-custodial (i.e. not supervised by us) smart contract-based wallet not provided by Aureus Safe. Safe Accounts are open-source released under LGPL-3.0.
 
 Smart contract wallet means, unlike a standard private key Wallet, that access control for authorizing any Transaction is defined in code. An example are multi-signature wallets which require that any Transaction must be signed by a minimum number of signing wallets whereby the specifics of the requirements to authorize a Transaction can be configured in code.
 
 Owners need to connect a signing wallet with a Safe Account. Safe Accounts are compatible inter alia with standard private key Wallets such as hardware wallets, browser extension wallets and mobile wallets that support WalletConnect.
 
-2. “**Safe{Wallet} App**”
+2. “**Aureus Safe App**”
 
-You may access Safe Accounts using the Safe{Wallet} web app, the mobile app “Safe{Mobile}” for iOS and Android, or the browser extension (each a “Safe{Wallet} App”). The Safe{Wallet} App may be used to manage your personal digital assets on Ethereum and other common EVM chains when you connect a Safe Account with third-party services (as defined below). The Safe{Wallet} App provides certain features that may be amended from time to time.
+You may access Safe Accounts using the Aureus Safe web app, the mobile app “Aureus Mobile” for iOS and Android, or the browser extension (each a “Aureus Safe App”). The Aureus Safe App may be used to manage your personal digital assets on Ethereum and other common EVM chains when you connect a Safe Account with third-party services (as defined below). The Aureus Safe App provides certain features that may be amended from time to time.
 
-To the extent you use our Services via the mobile app “Safe{Mobile}”, you acknowledge that this use may be governed by additional terms provided by the operators of the app store (such as the Apple App Store or Google Play Store). You acknowledge that you have to comply with both this Agreement and any applicable app store terms of service. In case of conflict, this Agreement shall prevail.
+To the extent you use our Services via the mobile app “Aureus Mobile”, you acknowledge that this use may be governed by additional terms provided by the operators of the app store (such as the Apple App Store or Google Play Store). You acknowledge that you have to comply with both this Agreement and any applicable app store terms of service. In case of conflict, this Agreement shall prevail.
 
 3. “**Third-Party Safe Apps**”
 
-The Safe{Wallet} App allows you to connect Safe Accounts to third-party applications (“Third-Party Safe Apps”) and use third-party services such as from the decentralized finance sector, DAO tools or services related to NFTs (“Third-Party Services"). The Third-Party Safe Apps are integrated in the user interface of the Safe{Wallet} App via inline framing. The provider of the Third-Party Safe App and/or related Third-Party Services is responsible for the operation of the service and the correctness, completeness and actuality of any information provided therein. We make a pre-selection of Third-Party Safe Apps that we show in the Safe{Wallet} App. However, we only perform a rough triage in advance for obvious problems and functionality in terms of loading time and resolution capability of the transactions. Accordingly, in the event of any (technical) issues concerning the Third-Party Services, the user must only contact the respective service provider directly. The terms of service, if any, shall be governed by the applicable contractual provisions between the User and the respective provider of the Third-Party Safe Apps or Third-Party Services. Accordingly, we are not liable in the event of a breach of contract, damage or loss related to the use of such Third-Party Safe Apps or Third-Party Services.
+The Aureus Safe App allows you to connect Safe Accounts to third-party applications (“Third-Party Safe Apps”) and use third-party services such as from the decentralized finance sector, DAO tools or services related to NFTs (“Third-Party Services"). The Third-Party Safe Apps are integrated in the user interface of the Aureus Safe App via inline framing. The provider of the Third-Party Safe App and/or related Third-Party Services is responsible for the operation of the service and the correctness, completeness and actuality of any information provided therein. We make a pre-selection of Third-Party Safe Apps that we show in the Aureus Safe App. However, we only perform a rough triage in advance for obvious problems and functionality in terms of loading time and resolution capability of the transactions. Accordingly, in the event of any (technical) issues concerning the Third-Party Services, the user must only contact the respective service provider directly. The terms of service, if any, shall be governed by the applicable contractual provisions between the User and the respective provider of the Third-Party Safe Apps or Third-Party Services. Accordingly, we are not liable in the event of a breach of contract, damage or loss related to the use of such Third-Party Safe Apps or Third-Party Services.
 
 # 4\. What do the Services not consist of? {#4.-what-do-the-services-not-consist-of?}
 
@@ -128,7 +128,7 @@ Our Services do not consist of:
 
 4. the storage or transmission of fiat currencies;
 
-5. back-up services to recover your Recovery Phrase or Private Keys, for whose safekeeping you are solely responsible; Safe Labs has no means to recover your access to your Tokens, when you lose access to your Safe Account;
+5. back-up services to recover your Recovery Phrase or Private Keys, for whose safekeeping you are solely responsible; Aureus Safe has no means to recover your access to your Tokens, when you lose access to your Safe Account;
 
 6. any form of legal, financial, investment, accounting, tax or other professional advice regarding Transactions and their suitability to you;
 
@@ -172,9 +172,9 @@ Our Services do not consist of:
 
 # 6\. What are the fees for the Services? {#6.-what-are-the-fees-for-the-services?}
 
-1. The use of the Safe{Wallet} App, Third-Party Safe Apps or Third-Party Services may cause fees, including network fees, as indicated in the respective app. Safe Labs has no control over the fees charged by the Third-Party Safe Apps or Third Party Services. Safe Labs may change its own fees at any time. Price changes will be communicated to the User in due time before taking effect.
+1. The use of the Aureus Safe App, Third-Party Safe Apps or Third-Party Services may cause fees, including network fees, as indicated in the respective app. Aureus Safe has no control over the fees charged by the Third-Party Safe Apps or Third Party Services. Aureus Safe may change its own fees at any time. Price changes will be communicated to the User in due time before taking effect.
 
-2. The User is only entitled to offset and/or assert rights of retention if his counterclaims are legally established, undisputed or recognized by Safe Labs.
+2. The User is only entitled to offset and/or assert rights of retention if his counterclaims are legally established, undisputed or recognized by Aureus Safe.
 
 # 7\. Are we responsible for the security of your Private Keys, Recovery Phrase or other credentials? {#7.-are-we-responsible-for-the-security-of-your-private-keys,-recovery-phrase-or-other-credentials?}
 
@@ -190,7 +190,7 @@ Our Services do not consist of:
 
 2. You are solely responsible for securing a back-up of your Safe Account access as you see fit. 
 
-3. Any recovery feature we provide access to within the Safe{Wallet} App is a mechanism controlled by your Safe Account on the Blockchain, both of which we don’t have any influence over once you have set it up. We will never act as a recoverer ourselves and don’t offer recovery services. The Self Custodial Recovery feature allows you to determine your own recovery setup and nominate anyone including yourself as your recoverer. The recoverer can start the recovery process at any time. Please note that we are not responsible for notifying you of this process (see Section 7 above). Furthermore we reserve the right to cease the access to the Self Custodial Recovery feature via our Safe{Wallet} App taking the user’s reasonable interests into account and providing due notification.
+3. Any recovery feature we provide access to within the Aureus Safe App is a mechanism controlled by your Safe Account on the Blockchain, both of which we don’t have any influence over once you have set it up. We will never act as a recoverer ourselves and don’t offer recovery services. The Self Custodial Recovery feature allows you to determine your own recovery setup and nominate anyone including yourself as your recoverer. The recoverer can start the recovery process at any time. Please note that we are not responsible for notifying you of this process (see Section 7 above). Furthermore we reserve the right to cease the access to the Self Custodial Recovery feature via our Aureus Safe App taking the user’s reasonable interests into account and providing due notification.
 
 4. The recovery feature is provided free of charge and liability is limited pursuant to Section 18 below.
 
@@ -200,15 +200,15 @@ Our Services do not consist of:
 
 2. You are responsible for monitoring Safe Account as you see fit. 
 
-3. Any notification service we provide or offer for subscription within the Safe{Wallet} App via e-mail or push notifications or any other means of communication is provided free of charge and liability is limited pursuant to Section 18 below. Furthermore we reserve the right to change the notification feature from time to time or cease to provide them without notice.
+3. Any notification service we provide or offer for subscription within the Aureus Safe App via e-mail or push notifications or any other means of communication is provided free of charge and liability is limited pursuant to Section 18 below. Furthermore we reserve the right to change the notification feature from time to time or cease to provide them without notice.
 
 # 10\. Are we responsible for flagging malicious transactions? {#10.-are-we-responsible-for-flagging-malicious-transactions?}
 
-1. We shall not be responsible for flagging malicious transactions in our Safe{Wallet} App.
+1. We shall not be responsible for flagging malicious transactions in our Aureus Safe App.
 
-2. You are solely responsible for checking any transaction, address, Token or other item you interact with via your Smart Account in our Safe{Wallet} App. 
+2. You are solely responsible for checking any transaction, address, Token or other item you interact with via your Smart Account in our Aureus Safe App. 
 
-5. Any security flagging or warning service we provide or offer for subscription within the Safe{Wallet} App is provided free of charge and liability is limited pursuant to Section 18 below. Furthermore we reserve the right to change the feature from time to time or cease to provide them without notice.
+5. Any security flagging or warning service we provide or offer for subscription within the Aureus Safe App is provided free of charge and liability is limited pursuant to Section 18 below. Furthermore we reserve the right to change the feature from time to time or cease to provide them without notice.
 
 # 11\. Are we responsible for the issuance of the Safe Token and any related functionalities or reward programs? {#11.-are-we-responsible-for-the-issuance-of-the-safe-token-and-any-related-functionalities-or-reward-programs?}
 
@@ -220,7 +220,7 @@ Our Services do not consist of:
 
 # 12\. Are we responsible for third-party content and services? {#12.-are-we-responsible-for-third-party-content-and-services?}
 
-1. You may view, have access to, and may use third-party content and services, for example widget integrations, within the Safe{Wallet} App (“Third-Party Features”). You view, access, or use Third-Party Features at your own election. Your reliance on Third-Party Features is subject to separate terms and conditions set forth by the applicable third party content and/or service provider (“Third-Party Terms”). Third-Party Terms may, amongst other things,
+1. You may view, have access to, and may use third-party content and services, for example widget integrations, within the Aureus Safe App (“Third-Party Features”). You view, access, or use Third-Party Features at your own election. Your reliance on Third-Party Features is subject to separate terms and conditions set forth by the applicable third party content and/or service provider (“Third-Party Terms”). Third-Party Terms may, amongst other things,
 
    1. involve separate fees and charges, 
 
@@ -232,13 +232,13 @@ Our Services do not consist of:
 
 2. Third Party Features are provided for your convenience only. We do not verify, curate, or control Third Party Features. 
 
-3. If we offer access to Third-Party Features in the Safe{Wallet} App free of charge by us (Third-Parties may charge separate fees), the liability for providing access to such Third-Party Feature is limited pursuant to Section 18 below. Furthermore we reserve the right to cease to provide access to those Third-Party Features through the Safe{Wallet} App without notice.
+3. If we offer access to Third-Party Features in the Aureus Safe App free of charge by us (Third-Parties may charge separate fees), the liability for providing access to such Third-Party Feature is limited pursuant to Section 18 below. Furthermore we reserve the right to cease to provide access to those Third-Party Features through the Aureus Safe App without notice.
 
 # 13\. Can we terminate or limit your right to use our Services? {#13.-can-we-terminate-or-limit-your-right-to-use-our-services?}
 
-1. We may cease offering our Services and/or terminate the Agreement and refuse access to the Safe{Wallet} App at any time. The right of the parties to terminate the Agreement at any time for cause remains unaffected. In case of our termination of the Agreement, you may no longer access your Safe Account via our Services. However, you may continue to access your Safe Account and any Tokens via a third-party wallet provider using your Recovery Phrase and Private Keys.
+1. We may cease offering our Services and/or terminate the Agreement and refuse access to the Aureus Safe App at any time. The right of the parties to terminate the Agreement at any time for cause remains unaffected. In case of our termination of the Agreement, you may no longer access your Safe Account via our Services. However, you may continue to access your Safe Account and any Tokens via a third-party wallet provider using your Recovery Phrase and Private Keys.
 
-2. We reserve the right to limit the use of the Safe{Wallet} App to a specified number of Users if necessary to protect or ensure the stability and integrity of the Services. We will only be able to limit access to the Services. At no time will we be able to limit or block access to or transfer your funds without your consent.
+2. We reserve the right to limit the use of the Aureus Safe App to a specified number of Users if necessary to protect or ensure the stability and integrity of the Services. We will only be able to limit access to the Services. At no time will we be able to limit or block access to or transfer your funds without your consent.
 
 # 14\. Can you terminate your Agreement with us? {#14.-can-you-terminate-your-agreement-with-us?}
 
@@ -246,7 +246,7 @@ You may terminate the Agreement at any time without notice.
 
 # 15\. What licenses and access do we grant to you? {#15.-what-licenses-and-access-do-we-grant-to-you?}
 
-1. All intellectual property rights in Safe Accounts and the Services throughout the world belong to us as owner or our licensors. Nothing in these Terms gives you any rights in respect of any intellectual property owned by us or our licensors and you acknowledge that you do not acquire any ownership rights by downloading the Safe{Wallet} App or any content from the Safe{Wallet} App.
+1. All intellectual property rights in Safe Accounts and the Services throughout the world belong to us as owner or our licensors. Nothing in these Terms gives you any rights in respect of any intellectual property owned by us or our licensors and you acknowledge that you do not acquire any ownership rights by downloading the Aureus Safe App or any content from the Aureus Safe App.
 
 2. If you are a consumer we grant you a simple, limited license, but do not sell, to you the Services you download solely for your own personal, non-commercial use.
 
@@ -254,9 +254,9 @@ You may terminate the Agreement at any time without notice.
 
 1. Without limiting your mandatory warranties, we provide the Services to you “as is” and “as available” in relation to merchantability, fitness for a particular purpose, availability, security, title or non-infringement.
 
-2. If you use the Safe{Wallet} App via web browser or as a mobile app, the strict liability of Safe Labs for damages (sec. 536a German Civil Code) for defects existing at the time of conclusion of the contract is precluded.
+2. If you use the Aureus Safe App via web browser or as a mobile app, the strict liability of Aureus Safe for damages (sec. 536a German Civil Code) for defects existing at the time of conclusion of the contract is precluded.
 
-3. The foregoing provisions will not limit Safe Labs’ liability as defined in Clause 18\.
+3. The foregoing provisions will not limit Aureus Safe’ liability as defined in Clause 18\.
 
 4. We reserve the right to change the format and features of the Services by making any updates to Services available for you to download or, where your device settings permit it, by automatic delivery of updates.
 
@@ -298,18 +298,18 @@ By using our Services you hereby agree, represent and warrant that:
 
 # 18\. What about our liability to you? {#18.-what-about-our-liability-to-you?}
 
-1. If the Safe{Wallet} App or Services are provided to the User free of charge (please note, in this context, that any service, network, and/or transaction fees may be charged by third parties via the Blockchain and not necessarily by us), Safe Labs shall be liable only in cases of intent, gross negligence, or if Safe Labs has fraudulently concealed a possible material or legal defect of the Safe{Wallet} App or Services.  
-2. If the Safe{Wallet} App or Services are not provided to the User free of charge, Safe Labs shall be liable only (i) in cases pursuant to Clause 18.1 as well as (ii) in cases of simple negligence for damages resulting from the breach of an essential contractual duty, a duty, the performance of which enables the proper execution of this Agreement in the first place and on the compliance of which the User regularly relies and may rely, whereby Safe Labs’ liability shall be limited to the compensation of the foreseeable, typically occurring damage. The Parties agree that the typical foreseeable damage equals the sum of the annual Fees paid or agreed to be paid by the User to Safe Labs during the course of the calendar year in which the event giving rise to the damage claim occurred. Liability in cases of simple negligence for damages resulting from the breach of a non-essential contractual duty are excluded.  
-3. The limitations of liability according to Clause 18.1 and Clause 18.2 do not apply (i) to damages resulting from injury to life, body or health, (ii) insofar as Safe Labs has assumed a guarantee, (iii) to claims of the User according to the Product Liability Act and (iv) to claims of the User according to the applicable data protection law.  
-4. The limitation of liability also applies to the personal liability of the organs, legal representatives, employees and vicarious agents of Safe Labs.  
-5. If the User suffers damages due to the loss of data, Safe Labs is not liable for this, insofar as the damage would have been avoided by a regular and complete backup of all relevant data by the User.  
-6. Notwithstanding the limitations provided in Clause 18.1 and 18.3, in case of an event that prevents us from performing and whose elimination is not possible or cannot be economically expected of Safe Labs, we shall be exempt from our obligation to perform..
+1. If the Aureus Safe App or Services are provided to the User free of charge (please note, in this context, that any service, network, and/or transaction fees may be charged by third parties via the Blockchain and not necessarily by us), Aureus Safe shall be liable only in cases of intent, gross negligence, or if Aureus Safe has fraudulently concealed a possible material or legal defect of the Aureus Safe App or Services.  
+2. If the Aureus Safe App or Services are not provided to the User free of charge, Aureus Safe shall be liable only (i) in cases pursuant to Clause 18.1 as well as (ii) in cases of simple negligence for damages resulting from the breach of an essential contractual duty, a duty, the performance of which enables the proper execution of this Agreement in the first place and on the compliance of which the User regularly relies and may rely, whereby Aureus Safe’ liability shall be limited to the compensation of the foreseeable, typically occurring damage. The Parties agree that the typical foreseeable damage equals the sum of the annual Fees paid or agreed to be paid by the User to Aureus Safe during the course of the calendar year in which the event giving rise to the damage claim occurred. Liability in cases of simple negligence for damages resulting from the breach of a non-essential contractual duty are excluded.  
+3. The limitations of liability according to Clause 18.1 and Clause 18.2 do not apply (i) to damages resulting from injury to life, body or health, (ii) insofar as Aureus Safe has assumed a guarantee, (iii) to claims of the User according to the Product Liability Act and (iv) to claims of the User according to the applicable data protection law.  
+4. The limitation of liability also applies to the personal liability of the organs, legal representatives, employees and vicarious agents of Aureus Safe.  
+5. If the User suffers damages due to the loss of data, Aureus Safe is not liable for this, insofar as the damage would have been avoided by a regular and complete backup of all relevant data by the User.  
+6. Notwithstanding the limitations provided in Clause 18.1 and 18.3, in case of an event that prevents us from performing and whose elimination is not possible or cannot be economically expected of Aureus Safe, we shall be exempt from our obligation to perform..
 
 # 19\. What about viruses, bugs and security vulnerabilities? {#19.-what-about-viruses,-bugs-and-security-vulnerabilities?}
 
 1. We endeavor to provide our Service free from material bugs, security vulnerabilities or viruses.
 
-2. You are responsible for configuring your information technology and computer programmes to access our Services and to use your own virus protection software. Insofar as the use of the Services, in particular the use of a Safe{Wallet} App demands certain device or system requirements, compliance with these requirements is the sole responsibility of the User.
+2. You are responsible for configuring your information technology and computer programmes to access our Services and to use your own virus protection software. Insofar as the use of the Services, in particular the use of a Aureus Safe App demands certain device or system requirements, compliance with these requirements is the sole responsibility of the User.
 
 3. If you become aware of any exploits, bugs or vulnerabilities, please inform bounty@safe.global.
 
@@ -319,7 +319,7 @@ By using our Services you hereby agree, represent and warrant that:
 
 1. We may update and change our Services from time to time. We may suspend or withdraw or restrict the availability of all or any part of our Services for business, operational or regulatory reasons or because of a Force Majeure Event at no notice.
 
-2. A “Force Majeure Event" shall mean any external event that is caused by elementary natural forces or acts of third parties, which is unforeseeable according to human insight and experience, and that cannot be prevented or rendered harmless by economically reasonable means even by exercising the utmost care reasonably to be expected under the circumstances, and which Safe Labs may not have to accept due to its frequency, and which prevents, hinders or delays the provision of our Services or makes their provision impossible, including, without limitation:
+2. A “Force Majeure Event" shall mean any external event that is caused by elementary natural forces or acts of third parties, which is unforeseeable according to human insight and experience, and that cannot be prevented or rendered harmless by economically reasonable means even by exercising the utmost care reasonably to be expected under the circumstances, and which Aureus Safe may not have to accept due to its frequency, and which prevents, hinders or delays the provision of our Services or makes their provision impossible, including, without limitation:
 
 * acts of God, flood, storm, drought, earthquake or other natural disaster;
 
@@ -337,7 +337,7 @@ By using our Services you hereby agree, represent and warrant that:
 
 * strike, industrial action or lockout.
 
-3. Notwithstanding the limitations provided in Clause 18.1 and 18.3, we shall not be liable or responsible to you, or be deemed to have defaulted under or breached this Agreement, for any failure or delay in the provision of the Services or the performance of this Agreement, if and to the extent such failure or delay is caused by or results from or is connected to a Force Majeure Event for which Safe Labs bears no responsibility whatsoever.
+3. Notwithstanding the limitations provided in Clause 18.1 and 18.3, we shall not be liable or responsible to you, or be deemed to have defaulted under or breached this Agreement, for any failure or delay in the provision of the Services or the performance of this Agreement, if and to the extent such failure or delay is caused by or results from or is connected to a Force Majeure Event for which Aureus Safe bears no responsibility whatsoever.
 
 # 21\. Who is responsible for your tax liabilities? {#21.-who-is-responsible-for-your-tax-liabilities?}
 

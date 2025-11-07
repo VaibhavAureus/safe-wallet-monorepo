@@ -2,7 +2,7 @@ import React from 'react'
 import { Typography } from '@mui/material'
 import css from './styles.module.css'
 import WelcomeLogin from './WelcomeLogin'
-import SafeLabsLogo from '@/public/images/logo-safe-labs.svg'
+import { BRAND_NAME, BRAND_LOGO } from '@/config/constants'
 import footerCss from './welcomeFooter.module.css'
 import Footer from '../common/Footer'
 
@@ -11,7 +11,11 @@ const NewSafe = () => {
     <div className={css.loginPage}>
       <div className={css.leftSide}>
         <div className={css.logoContainer}>
-          <SafeLabsLogo className={css.logo} />
+          {BRAND_LOGO ? (
+            <img src={BRAND_LOGO} alt={BRAND_NAME} className={css.logo} style={{ height: '40px', width: 'auto' }} />
+          ) : (
+            <Typography variant="h4" fontWeight={700}>{BRAND_NAME}</Typography>
+          )}
         </div>
         <div className={css.loginContainer}>
           <WelcomeLogin />

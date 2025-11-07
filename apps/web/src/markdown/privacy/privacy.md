@@ -1,8 +1,8 @@
 # Privacy Policy {#privacy-policy}
 
-Last updated: October 2025
+Last updated: November 2025
 
-Safe Labs GmbH, Unter den Linden 10, 10117 Berlin (hereinafter “**Safe Labs**”, “**we**” or “**us**”) takes the protection of personal data very seriously.
+Aureus Safe (hereinafter “**Aureus Safe**”, “**we**” or “**us**”) takes the protection of personal data very seriously.
 
 We treat personal data confidentially and always in accordance with Regulation (EU) 2016/679 (hereinafter “**General Data Protection Regulation**” or “**GDPR**”), the German Federal Data Protection Act (hereinafter “**BDSG**”), and in accordance with the provisions of this Privacy Policy.
 
@@ -24,9 +24,9 @@ Unless otherwise stated in this Privacy Policy, the terms used here have the mea
 
 [3.3. When participating in user experience research (UXR)](#when-participating-in-user-experience-research-\(uxr\))
 
-[3.4. Downloading the Safe{Mobile} app](#downloading-the-safe{mobile}-app)
+[3.4. Downloading the Aureus Mobile app](#downloading-the-safe{mobile}-app)
 
-[3.5. Use of the Safe{Mobile} app](#use-of-the-safe{mobile}-app)
+[3.5. Use of the Aureus Mobile app](#use-of-the-safe{mobile}-app)
 
 [3.6. Contacting us](#contacting-us)
 
@@ -91,7 +91,7 @@ Unless otherwise stated in this Privacy Policy, the terms used here have the mea
    7. “**Public Ke**y” is a unique sequence of numbers and letters within the Blockchain to distinguish the network participants from each other.
    8. “**Private Key**” is a unique sequence of numbers and/or letters required to initiate a Blockchain Transaction and should only be known by the legal owner of the Wallet.
    9. “**Safe** **Account**” is a modular, self-custodial (i.e. not supervised by us) smart contract-based Wallet. Safe Accounts are [**open-source**](https://github.com/safe-global/safe-contracts/) released under LGPL-3.0.
-   10. “**Safe Interfaces**” refers to Safe{Wallet} a web-based graphical user interface for Safe Accounts as well as a mobile application on Android and iOS.
+   10. “**Safe Interfaces**” refers to Aureus Safe a web-based graphical user interface for Safe Accounts as well as a mobile application on Android and iOS.
    11.  “**Safe Account Transaction**” is a Transaction of a Safe Account, authorized by a user, typically via their Wallet.
    12.  “**Profile**” means the Public Key and user provided, human readable label stored locally on the user's device.
 
@@ -113,7 +113,7 @@ Unless otherwise stated in this Privacy Policy, the terms used here have the mea
 
 When visiting our Website or using Safe Interfaces, we will collect and process personal data. Such personal data will be stored in different instances
 
-1. We connect the Wallet to the web Safe{Wallet} app to identify the user via their public Wallet address. For this purpose we process:
+1. We connect the Wallet to the web Aureus Safe app to identify the user via their public Wallet address. For this purpose we process:
 
    1. public Wallet address, and  
    2. WalletConnect connection data.
@@ -211,7 +211,7 @@ We do not track any of the following data:
 
 In the case you have given consent, we will additionally store an analytics cookie on your device to identify you as a user across browsing sessions. The lawful basis for this processing is your prior consent (GDPR Art.6.1a) when agreeing to accept cookies. You can revoke your consent at any time with effect for the future via the cookie banner. The withdrawal of your consent does not affect the lawfulness of processing based on your consent before its withdrawal.
 
-3.2.2 For general operational analysis of the Safe{Wallet} app interface, monitoring transaction origins and measuring transaction failure rates to ensure improved service performance and reliability, we process information which constitutes the transaction service database, such as:
+3.2.2 For general operational analysis of the Aureus Safe app interface, monitoring transaction origins and measuring transaction failure rates to ensure improved service performance and reliability, we process information which constitutes the transaction service database, such as:
 
 1. signatures,  
 2. signature\_type,  
@@ -257,33 +257,33 @@ In addition, we may take a recording of you while testing the Safe Interfaces fo
 
 The lawful basis for this processing is your informed consent (GDPR Art.6.1f) as provided before participating in user experience research. You can revoke your consent at any time with effect for the future by email to safelabs.dpo@techgdpr.com. The withdrawal of your consent does not affect the lawfulness of processing based on your consent before its withdrawal.
 
-## 3.4 Downloading the Safe{Mobile} app {#downloading-the-safe{mobile}-app}
+## 3.4 Downloading the Aureus Mobile app {#downloading-the-safe{mobile}-app}
 
-3.4.1 Downloading the Safe{Mobile} app on Google Play Store.
+3.4.1 Downloading the Aureus Mobile app on Google Play Store.
 
-We process the following information to enable you to download the Safe{Wallet} app on smartphones running Android:
+We process the following information to enable you to download the Aureus Safe app on smartphones running Android:
 
 1. google account, and  
 2. e-mail address.
 
-3.4.2 Downloading the Safe{Mobile} app on Apple App Store
+3.4.2 Downloading the Aureus Mobile app on Apple App Store
 
-We process the following information to enable you to download the Safe{Mobile} app on smartphones running iOS:
+We process the following information to enable you to download the Aureus Mobile app on smartphones running iOS:
 
 1. apple account, and  
 2. e-mail address.
 
 The lawful basis for these two processing activities is the performance of the contract we have with you (GDPR Art.6.1b).
 
-## 3.5 Use of the Safe{Mobile} app  {#use-of-the-safe{mobile}-app}
+## 3.5 Use of the Aureus Mobile app  {#use-of-the-safe{mobile}-app}
 
-3.5.1 We provide the Safe{Mobile} app  to you to enable you to use it. For this purpose we process your:
+3.5.1 We provide the Aureus Mobile app  to you to enable you to use it. For this purpose we process your:
 
 1. mobile device information,  
 2. http request caches, and  
 3. http request cookies.
 
-3.5.2 In order to update you about changes in the Safe{Mobile} app, we need to send you push notifications. For this purpose we process your:
+3.5.2 In order to update you about changes in the Aureus Mobile app, we need to send you push notifications. For this purpose we process your:
 
 1. Transactions executed and failed,  
 2. assets sent, and  
@@ -293,10 +293,10 @@ The lawful basis for these two processing activities is the performance of the c
 
 1. pseudonymized user identifier.
 
-3.5.4 In order to provide remote client configuration and control whether to inform about, recommend or force you to update your Safe{Mobile} app  or enable/disable certain Safe{Mobile} app  features we process your:
+3.5.4 In order to provide remote client configuration and control whether to inform about, recommend or force you to update your Aureus Mobile app  or enable/disable certain Aureus Mobile app  features we process your:
 
 1. user agent,  
-2. Safe{Mobile} app information (version, build number etc.),  
+2. Aureus Mobile app information (version, build number etc.),  
 3. language,  
 4. country,  
 5. platform,  
@@ -357,7 +357,7 @@ To conduct this activity we rely on our legitimate interest (GDPR Art.6.1f) of a
 3. IP address, and  
 4. approximate location.
 
-We rely on our legitimate interest to ensure that our services or derivatives do not extend into sectors in which we are not licensed to operate in (GDPR Art.6.1f). Safe Labs is not licensed to provide or trade securities in the US and therefore cannot operate in the securities market.
+We rely on our legitimate interest to ensure that our services or derivatives do not extend into sectors in which we are not licensed to operate in (GDPR Art.6.1f). Aureus Safe is not licensed to provide or trade securities in the US and therefore cannot operate in the securities market.
 
 3.5.9 We process personal data to detect use of VPN aimed at circumventing the restriction in section 3.5.8 above and to prevent fraud. Personal data processed include:
 
@@ -404,11 +404,11 @@ We use [**Datadog**](https://www.datadoghq.com/) to store log data as described 
 
 ## 5.4. Mobile app stores {#mobile-app-stores}
 
-Safe{Mobile} mobile apps are distributed via [**Apple AppStore**](https://www.apple.com/app-store/) and [**Google Play Store**](https://play.google.com/). They most likely track user behavior when downloading apps from their stores as well as when using apps. We only have very limited access to that data. We can view aggregated statistics on installs and uninstalls. Grouping by device type, app version, language, carrier and country is possible.
+Aureus Mobile mobile apps are distributed via [**Apple AppStore**](https://www.apple.com/app-store/) and [**Google Play Store**](https://play.google.com/). They most likely track user behavior when downloading apps from their stores as well as when using apps. We only have very limited access to that data. We can view aggregated statistics on installs and uninstalls. Grouping by device type, app version, language, carrier and country is possible.
 
 ## 5.5. Fingerprint/Touch ID/ Face ID {#fingerprint/touch-id/-face-id}
 
-We enable the user to unlock the Safe{Mobile} app via biometrics information (touch ID or face ID). This is a feature of the operating system. We do not store any of this data. Instead, the API of the operating system is used to validate the user input. If you have any further questions you should consult with your preferred mobile device provider or manufacturer.
+We enable the user to unlock the Aureus Mobile app via biometrics information (touch ID or face ID). This is a feature of the operating system. We do not store any of this data. Instead, the API of the operating system is used to validate the user input. If you have any further questions you should consult with your preferred mobile device provider or manufacturer.
 
 ## 5.6. Google Firebase {#google-firebase}
 
@@ -458,7 +458,7 @@ We use MoonPay to offer on-ramp and off-ramp services. For that purpose personal
 
 ## 5.13 Spindl {#spindl}
 
-We use [**Spindl**](https://www.spindl.xyz/), a measurement and attribution solution for web3 that assists us in comprehending how users interact with different decentralized applications and our Safe{Mobile} app and to enhance your experience with Safe{Wallet}. For enhanced privacy, data is stored for a period of 7 days after which it is securely deleted.
+We use [**Spindl**](https://www.spindl.xyz/), a measurement and attribution solution for web3 that assists us in comprehending how users interact with different decentralized applications and our Aureus Mobile app and to enhance your experience with Aureus Safe. For enhanced privacy, data is stored for a period of 7 days after which it is securely deleted.
 
 ## 5.14 Fingerprint {#fingerprint}
 
@@ -532,7 +532,7 @@ You have a choice about whether or not you wish to receive information from us. 
 
   **Right to complain to a supervisory authority**
 
-  Subject to the requirements of GDPR Art.77, you have the right to file a complaint with a competent supervisory authority. As a rule, the data subject may contact the supervisory authority of his or her habitual residence or place of work or place of the alleged infringement or the registered office of Safe Labs. The supervisory authority responsible for Safe Labs is the Berliner Beauftragte für Datenschutz und Informationsfreiheit. A list of all German supervisory authorities and their contact details can be found [here](https://www.bfdi.bund.de/EN/Service/Anschriften/Laender/Laender-node.html).
+  Subject to the requirements of GDPR Art.77, you have the right to file a complaint with a competent supervisory authority. As a rule, the data subject may contact the supervisory authority of his or her habitual residence or place of work or place of the alleged infringement or the registered office of Aureus Safe. The supervisory authority responsible for Aureus Safe is the Berliner Beauftragte für Datenschutz und Informationsfreiheit. A list of all German supervisory authorities and their contact details can be found [here](https://www.bfdi.bund.de/EN/Service/Anschriften/Laender/Laender-node.html).
 
 # 11. Changes to this Privacy Policy {#changes-to-this-privacy-policy}
 
@@ -542,7 +542,7 @@ We may modify this Privacy Policy at any time to comply with legal requirements 
 
 Contact us by post or e-mail at:
 
-Safe Labs GmbH  
+Aureus Safe GmbH  
 Unter den Linden 10  
 10117 Berlin  
 Germany   
