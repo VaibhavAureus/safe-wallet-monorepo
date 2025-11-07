@@ -1,7 +1,6 @@
 {
-  "buildCommand": "cd ../.. && corepack enable && corepack prepare yarn@4.6.0 --activate && export PATH=$(dirname $(which corepack)):$PATH && yarn install --immutable && yarn workspace @safe-global/web build",
-  "outputDirectory": "out",
-  "installCommand": "cd ../.. && corepack enable && corepack prepare yarn@4.6.0 --activate && export PATH=$(dirname $(which corepack)):$PATH && yarn install --immutable",
-  "framework": "nextjs"
+  "buildCommand": "corepack enable && corepack prepare yarn@4.6.0 --activate && export PATH=$(dirname $(which corepack)):$PATH && yarn install --immutable && yarn workspace @safe-global/web build",
+  "outputDirectory": "apps/web/out",
+  "installCommand": "corepack enable && corepack prepare yarn@4.6.0 --activate && export PATH=$(dirname $(which corepack)):$PATH && yarn install --immutable",
+  "framework": null
 }
-
