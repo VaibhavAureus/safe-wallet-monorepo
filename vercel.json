@@ -1,7 +1,7 @@
 {
-  "buildCommand": "bash vercel-build.sh",
+  "buildCommand": "corepack enable && corepack prepare yarn@4.6.0 --activate && export PATH=$(dirname $(which corepack)):$PATH && yarn install --immutable && yarn workspace @safe-global/web build",
   "outputDirectory": "apps/web/out",
-  "installCommand": "bash -c 'corepack enable && corepack prepare yarn@4.6.0 --activate && export PATH=$(dirname $(which corepack)):$PATH && yarn install --immutable'",
+  "installCommand": "corepack enable && corepack prepare yarn@4.6.0 --activate && export PATH=$(dirname $(which corepack)):$PATH && yarn install --immutable",
   "framework": "nextjs"
 }
 
