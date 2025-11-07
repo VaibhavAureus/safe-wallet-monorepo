@@ -15,26 +15,24 @@ const SafeImprint = () => (
       Information in accordance with section 5 of the Telemedia Act (TMG, Germany):
     </Typography>
     <Typography mb={2}>
-      Safe Labs GmbH
+      Aureus Safe
       <br />
-      Unter den Linden 10
+      [Your Address]
       <br />
-      10117 Berlin, Germany
+      [Your City, Country]
       <br />
     </Typography>
     <Typography mb={4}>
-      Managing director: Rahul Rumalla
+      Managing director: [Your Name]
       <br />
-      Responsible for content: Rahul Rumalla
+      Responsible for content: [Your Name]
       <br />
       Contact:{' '}
-      <Link href="mailto:info@safe.global" passHref legacyBehavior>
-        <MUILink>Email address: info@safe.global</MUILink>
+      <Link href="mailto:contact@aureus.money" passHref legacyBehavior>
+        <MUILink>Email address: contact@aureus.money</MUILink>
       </Link>
       <br />
-      Commercial register maintained by: Amtsgericht Charlottenburg (Berlin) - Local Court
-      <br />
-      Register Number: HRB 270980
+      [Your Company Registration Details]
     </Typography>
     <Typography variant="h3" mb={2}>
       Disclaimer

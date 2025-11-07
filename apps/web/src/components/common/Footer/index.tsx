@@ -59,7 +59,7 @@ const Footer: React.FC<FooterProps> = ({
         {isOfficialHost ? (
           <>
             <li>
-              <Typography variant="caption">&copy;{copyrightYear} Safe Labs GmbH</Typography>
+              <Typography variant="caption">&copy;{copyrightYear} Aureus Safe</Typography>
             </li>
             <li>
               <FooterLink href={getHref(AppRoutes.terms)}>Terms</FooterLink>
