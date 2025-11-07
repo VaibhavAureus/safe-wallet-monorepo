@@ -1,0 +1,7 @@
+{
+  "buildCommand": "yarn workspace @safe-global/web build",
+  "outputDirectory": "apps/web/out",
+  "installCommand": "yarn install",
+  "framework": "nextjs"
+}
+
