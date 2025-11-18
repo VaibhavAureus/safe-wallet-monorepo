@@ -3,7 +3,7 @@ import { ContentSecurityPolicy, StrictTransportSecurity } from '@/config/securit
 import lightPalette from '@/components/theme/lightPalette'
 import darkPalette from '@/components/theme/darkPalette'
 
-const descriptionText = `${BRAND_NAME} is the most trusted smart account wallet on Ethereum with over $100B secured.`
+const descriptionText = `${BRAND_NAME} turns hard assets into liquid, programmable capital — sovereign, resilient banking governed by code.`
 const titleText = BRAND_NAME
 
 const MetaTags = ({ prefetchUrl }: { prefetchUrl: string }) => (
@@ -12,14 +12,14 @@ const MetaTags = ({ prefetchUrl }: { prefetchUrl: string }) => (
     {!IS_PRODUCTION && <meta name="robots" content="noindex" />}
 
     {/* Social sharing */}
-    <meta property="og:image" content="/images/social-share.png" />
+    <meta property="og:image" content="/images/aureus_bg.png" />
     <meta property="og:description" content={descriptionText} />
     <meta property="og:title" content={titleText} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@aureus" />
     <meta name="twitter:title" content={titleText} />
     <meta name="twitter:description" content={descriptionText} />
-    <meta name="twitter:image" content="/images/social-share.png" />
+    <meta name="twitter:image" content="/images/aureus_bg.png" />
 
     {/* CSP */}
     <meta httpEquiv="Content-Security-Policy" content={ContentSecurityPolicy} />
