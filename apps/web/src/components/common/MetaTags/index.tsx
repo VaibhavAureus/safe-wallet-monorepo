@@ -12,9 +12,9 @@ const MetaTags = ({ prefetchUrl }: { prefetchUrl: string }) => (
     {!IS_PRODUCTION && <meta name="robots" content="noindex" />}
 
     {/* Social sharing */}
-    <meta name="og:image" content="/images/social-share.png" />
-    <meta name="og:description" content={descriptionText} />
-    <meta name="og:title" content={titleText} />
+    <meta property="og:image" content="/images/social-share.png" />
+    <meta property="og:description" content={descriptionText} />
+    <meta property="og:title" content={titleText} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@aureus" />
     <meta name="twitter:title" content={titleText} />
