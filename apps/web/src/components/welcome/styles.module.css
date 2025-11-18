@@ -14,12 +14,12 @@
 
 .rightSide {
   width: 50%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: space-between;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  align-items: flex-start;
   overflow: hidden;
-  background: #121312;
+  background: #000000;
+  padding: 64px 80px 48px;
 }
 
 .leftSide {
@@ -41,10 +41,8 @@
 }
 
 .rightContent {
-  margin: auto;
-  text-align: center;
-  margin: var(--space-8) auto;
-  max-width: 350px;
+  max-width: 420px;
+  text-align: left;
 }
 
 .label {
@@ -62,14 +60,51 @@
   margin-top: var(--space-2);
 }
 
+.subtitle {
+  margin-top: var(--space-3);
+  font-size: 16px;
+  line-height: 150%;
+  color: #c0c2c6;
+  max-width: 380px;
+}
+
 .mockupImageContainer {
   display: flex;
-  align-items: flex-end;
-  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
 }
 
 .mockupImage {
-  max-width: 50vw;
+  width: auto;
+  height: auto;
+  max-height: 38.2%;
+  max-width: 38.2%;
+  opacity: 0.95;
+  animation: logoFadeIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards,
+    logoFloat 6s cubic-bezier(0.45, 0, 0.55, 1) infinite 1.2s;
+  transform-origin: center;
+}
+
+@keyframes logoFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.96);
+  }
+  100% {
+    opacity: 0.95;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes logoFloat {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-12px) scale(1.02);
+  }
 }
 
 @media (max-width: 1199.95px) {
@@ -80,6 +115,7 @@
 
   .rightSide {
     width: 100%;
+    padding: 48px 32px 32px;
   }
 
   .leftSide {
@@ -89,14 +125,14 @@
   }
 
   .mockupImage {
-    max-width: 100vw;
-    margin-bottom: 59px;
+    max-height: 45%;
+    max-width: 45%;
   }
 }
 
 @media (max-width: 599.95px) {
   .mockupImage {
-    max-width: 100vw;
-    margin-bottom: 79px;
+    max-height: 50%;
+    max-width: 50%;
   }
 }
