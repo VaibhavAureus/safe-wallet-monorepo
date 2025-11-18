@@ -90,7 +90,9 @@ const Footer: React.FC<FooterProps> = ({
             )}
           </>
         ) : (
-          <li>This is an unofficial distribution of the app</li>
+          <li>
+            <Typography variant="caption">&copy;{copyrightYear} Aureus Safe</Typography>
+          </li>
         )}
 
         <li>
