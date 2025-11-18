@@ -2,7 +2,6 @@ import React from 'react'
 import { Typography } from '@mui/material'
 import css from './styles.module.css'
 import WelcomeLogin from './WelcomeLogin'
-import { BRAND_NAME, BRAND_LOGO } from '@/config/constants'
 import footerCss from './welcomeFooter.module.css'
 import Footer from '../common/Footer'
 
