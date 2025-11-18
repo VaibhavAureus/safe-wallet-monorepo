@@ -3,7 +3,7 @@ import { ContentSecurityPolicy, StrictTransportSecurity } from '@/config/securit
 import lightPalette from '@/components/theme/lightPalette'
 import darkPalette from '@/components/theme/darkPalette'
 
-const descriptionText = `${BRAND_NAME} turns hard assets into liquid, programmable capital — sovereign, resilient banking governed by code.`
+const descriptionText = `${BRAND_NAME} is a secure multisig vault for the Aureus ecosystem. Protect your assets with advanced security and seamlessly connect to your Aureus EVM Wallet in the mobile app.`
 const titleText = BRAND_NAME
 
 const MetaTags = ({ prefetchUrl }: { prefetchUrl: string }) => (
