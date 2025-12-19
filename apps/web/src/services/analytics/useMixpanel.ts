@@ -57,16 +57,12 @@ const useMixpanel = () => {
 
     try {
       if (isAnalyticsEnabled) {
-        if (mixpanel && typeof mixpanel.opt_in_tracking === 'function') {
-          mixpanel.opt_in_tracking()
-          if (!IS_PRODUCTION) {
-            console.info('[Mixpanel] - User opted in')
-          }
+        mixpanelOptInTracking()
+        if (!IS_PRODUCTION) {
+          console.info('[Mixpanel] - User opted in')
         }
       } else {
-        if (mixpanel && typeof mixpanel.opt_out_tracking === 'function') {
-          mixpanel.opt_out_tracking()
-        }
+        mixpanelOptOutTracking()
         if (!IS_PRODUCTION) {
           console.info('[Mixpanel] - User opted out')
         }
