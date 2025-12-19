@@ -18,6 +18,8 @@ import type { ConnectedWallet } from '@/hooks/wallets/useOnboard'
 import { UncheckedJsonRpcSigner } from '@/utils/providers/UncheckedJsonRpcSigner'
 import get from 'lodash/get'
 import { maybePlural } from '@safe-global/utils/utils/formatters'
+import { getStoreInstance } from '@/store'
+import { selectUndeployedSafe } from '@/features/counterfactual/store/undeployedSafesSlice'
 
 export const getAndValidateSafeSDK = (): Safe => {
   const safeSDK = getSafeSDK()
@@ -140,6 +142,17 @@ export const getUncheckedSigner = async (provider: Eip1193Provider) => {
 
 export const getSafeSDKWithSigner = async (provider: Eip1193Provider): Promise<Safe> => {
   const sdk = getAndValidateSafeSDK()
+
+  const chainId = await sdk.getChainId()
+  const safeAddress = await sdk.getAddress()
+
+  const store = getStoreInstance()
+  const state = store.getState()
+  const undeployedSafe = selectUndeployedSafe(state, chainId.toString(), safeAddress)
+
+  if (undeployedSafe) {
+    return sdk.connect({ provider, predictedSafe: undeployedSafe.props })
+  }
 
   return sdk.connect({ provider })
 }
