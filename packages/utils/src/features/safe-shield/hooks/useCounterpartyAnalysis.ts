@@ -37,10 +37,11 @@ export function useCounterpartyAnalysis({
   ownedSafes: string[]
   web3ReadOnly?: JsonRpcProvider
 }): {
-  recipient?: AsyncResult<RecipientAnalysisResults>
-  contract?: AsyncResult<ContractAnalysisResults>
+  recipient: AsyncResult<RecipientAnalysisResults>
+  contract: AsyncResult<ContractAnalysisResults>
 } {
-  const [triggerAnalysis, { data: counterpartyData, error, isLoading }] = useSafeShieldAnalyzeCounterpartyV1Mutation()
+  const [triggerAnalysis, { data: counterpartyData, error, isLoading: isCounterpartyLoading }] =
+    useSafeShieldAnalyzeCounterpartyV1Mutation()
 
   const [hasTriggered, setHasTriggered] = useState(false)
 
@@ -108,43 +109,56 @@ export function useCounterpartyAnalysis({
     return undefined
   }, [error])
 
+  // Check if any of the checks are loading or if the results are not complete
+  const isLoading = useMemo(
+    () => isCounterpartyLoading || activityCheckLoading,
+    [isCounterpartyLoading, activityCheckLoading],
+  )
+
   // Merge backend recipient results with local checks
   const mergedRecipientResults = useMemo(() => {
     if (fetchError || activityCheckError) {
       return { [safeAddress]: { [StatusGroup.COMMON]: [getErrorInfo(ErrorType.RECIPIENT)] } }
     }
-    // Only merge different results after all of them are available
-    if (!recipientAnalysisByAddress || !addressBookCheck || activityCheckLoading) {
+
+    // Only merge results if all of them are available
+    if (isLoading) {
       return undefined
     }
 
-    return mergeAnalysisResults(recipientAnalysisByAddress, addressBookCheck, activityCheck)
+    return recipientAnalysisByAddress
+      ? mergeAnalysisResults(recipientAnalysisByAddress, addressBookCheck, activityCheck)
+      : undefined
   }, [
     recipientAnalysisByAddress,
     addressBookCheck,
     activityCheck,
     fetchError,
     activityCheckError,
-    activityCheckLoading,
+    isLoading,
     safeAddress,
   ])
 
   const contractResults = useMemo(() => {
     if (fetchError) {
-      return { [safeAddress]: { [StatusGroup.COMMON]: [getErrorInfo(ErrorType.CONTRACT)] } }
+      return {
+        [safeAddress]: {
+          name: '',
+          logoUrl: '',
+          [StatusGroup.COMMON]: [getErrorInfo(ErrorType.CONTRACT)],
+        },
+      }
     }
     if (!counterpartyData?.contract) {
       return undefined
     }
 
     return counterpartyData.contract as ContractAnalysisResults
-  }, [counterpartyData?.contract, fetchError])
+  }, [counterpartyData?.contract, fetchError, safeAddress])
 
   // Return results in the expected format
   return {
-    recipient: mergedRecipientResults
-      ? [mergedRecipientResults, fetchError || activityCheckError, isLoading || activityCheckLoading]
-      : undefined,
-    contract: contractResults ? [contractResults, fetchError, isLoading] : undefined,
+    recipient: [mergedRecipientResults, fetchError || activityCheckError, isLoading],
+    contract: [contractResults, fetchError, isCounterpartyLoading],
   }
 }

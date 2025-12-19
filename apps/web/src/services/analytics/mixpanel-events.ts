@@ -6,6 +6,7 @@ export enum MixpanelEvent {
   POSITION_EXPANDED = 'Position Expanded',
   POSITIONS_VIEW_ALL_CLICKED = 'Positions View All Clicked',
   EMPTY_POSITIONS_EXPLORE_CLICKED = 'Empty Positions Explore Clicked',
+  PORTFOLIO_REFRESH_CLICKED = 'Portfolio Refresh Clicked',
   STAKE_VIEWED = 'Stake Viewed',
   EARN_VIEWED = 'Earn Viewed',
   WC_CONNECTED = 'WC Connected',
@@ -14,7 +15,23 @@ export enum MixpanelEvent {
   NATIVE_SWAP_VIEWED = 'Native Swap Viewed',
   SAFE_LABS_TERMS_ACCEPTED = 'Safe Labs Terms Accepted',
   SIDEBAR_CLICKED = 'Sidebar Clicked',
+  GUARDIAN_BANNER_VIEWED = 'Guardian Banner Viewed',
+  GUARDIAN_FORM_VIEWED = 'Guardian Form Viewed',
+  GUARDIAN_FORM_STARTED = 'Guardian Form Started',
+  GUARDIAN_FORM_SUBMITTED = 'Guardian Form Submitted',
+  SECURITY_REPORT_CLICKED = 'Security Report Clicked',
+  GUARDIAN_BANNER_DISMISSED = 'Guardian Banner Dismissed',
   EXPLORE_POSSIBLE_CLICKED = 'Explore Possible Clicked',
+  TRANSACTION_STARTED = 'Transaction Started',
+  TRANSACTION_RECIPIENT_DECODED = 'Transaction Recipient Decoded',
+  TRANSACTION_CONTRACT_DECODED = 'Transaction Contract Decoded',
+  TRANSACTION_THREAT_ANALYZED = 'Transaction Threat Analyzed',
+  TRANSACTION_SIMULATED = 'Transaction Simulated',
+  TRANSACTION_EXECUTED = 'Transaction Executed',
+  TRANSACTION_EXECUTED_VIA_PARENT = 'Transaction Executed Via Parent',
+  TRANSACTION_EXECUTED_IN_PARENT = 'Transaction Executed In Parent',
+  TRANSACTION_EXECUTED_VIA_ROLE = 'Transaction Executed Via Role',
+  TRANSACTION_SUBMITTED = 'Transaction Submitted',
 }
 
 export enum MixpanelUserProperty {
@@ -53,6 +70,9 @@ export enum MixpanelEventParams {
   APP_URL = 'App URL',
   DATE_RANGE = 'Date Range',
   SIDEBAR_ELEMENT = 'Sidebar Element',
+  RESULT = 'Result',
+  SOURCE = 'Source',
+  TRANSACTION_TYPE = 'Transaction Type',
 }
 
 export enum SafeAppLaunchLocation {

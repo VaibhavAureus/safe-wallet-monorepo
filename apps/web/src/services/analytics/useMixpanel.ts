@@ -1,6 +1,5 @@
 import { useEffect, useMemo, useRef } from 'react'
 import { useTheme } from '@mui/material/styles'
-import mixpanel from 'mixpanel-browser'
 import {
   mixpanelInit,
   mixpanelSetBlockchainNetwork,
@@ -11,6 +10,8 @@ import {
   mixpanelSetEOAWalletLabel,
   mixpanelSetEOAWalletAddress,
   mixpanelSetEOAWalletNetwork,
+  mixpanelOptInTracking,
+  mixpanelOptOutTracking,
 } from './mixpanel'
 import { useAppSelector } from '@/store'
 import { CookieAndTermType, hasConsentFor } from '@/store/cookiesAndTermsSlice'

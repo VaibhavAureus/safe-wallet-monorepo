@@ -20,6 +20,7 @@ import {
   calculateAnalysisDelays,
   useDelayedLoading,
 } from '@/features/safe-shield/hooks/useDelayedLoading'
+import { SAFE_SHIELD_EVENTS } from '@/services/analytics'
 
 const normalizeThreatData = (threat?: AsyncResult<ThreatAnalysisResults>): Record<string, GroupedAnalysisResults> => {
   const [result] = threat || []
@@ -45,6 +46,7 @@ export const SafeShieldContent = ({
   const [recipientResults = {}, _recipientError, recipientLoading = false] = recipient || []
   const [contractResults = {}, _contractError, contractLoading = false] = contract || []
   const [threatResults, _threatError, threatLoading = false] = threat || []
+
   const normalizedThreatData = normalizeThreatData(threat)
   const { hasSimulationError } = useCheckSimulation(safeTx)
   const highlightedSeverity = useHighlightedSeverity(
@@ -59,7 +61,7 @@ export const SafeShieldContent = ({
 
   const recipientEmpty = isEmpty(recipientResults)
   const contractEmpty = isEmpty(contractResults)
-  const threatEmpty = isEmpty(threatResults) || isEmpty(threatResults.THREAT)
+  const threatEmpty = isEmpty(threatResults) || isEmpty(threatResults?.THREAT)
   const analysesEmpty = recipientEmpty && contractEmpty && threatEmpty
   const allEmpty = recipientEmpty && contractEmpty && threatEmpty && !safeTx
 
@@ -82,29 +84,31 @@ export const SafeShieldContent = ({
         {shouldShowContent && !loading && allEmpty && <SafeShieldAnalysisEmpty />}
 
         <Box sx={{ '& > div:not(:last-child)': { borderBottom: '1px solid', borderColor: 'background.main' } }}>
-          {!recipientEmpty && (
-            <AnalysisGroupCard
-              delay={recipientDelay}
-              data={recipientResults}
-              highlightedSeverity={highlightedSeverity}
-            />
-          )}
+          <AnalysisGroupCard
+            data-testid="recipient-analysis-group-card"
+            delay={recipientDelay}
+            data={recipientResults}
+            highlightedSeverity={highlightedSeverity}
+            analyticsEvent={SAFE_SHIELD_EVENTS.RECIPIENT_DECODED}
+          />
 
-          {!contractEmpty && (
-            <AnalysisGroupCard
-              data={contractResults}
-              delay={contractAnalysisDelay}
-              highlightedSeverity={highlightedSeverity}
-            />
-          )}
+          <AnalysisGroupCard
+            data-testid="contract-analysis-group-card"
+            data={contractResults}
+            delay={contractAnalysisDelay}
+            highlightedSeverity={highlightedSeverity}
+            analyticsEvent={SAFE_SHIELD_EVENTS.CONTRACT_DECODED}
+            showImage
+          />
 
-          {!threatEmpty && (
-            <AnalysisGroupCard
-              data={normalizedThreatData}
-              delay={threatAnalysisDelay}
-              highlightedSeverity={highlightedSeverity}
-            />
-          )}
+          <AnalysisGroupCard
+            data-testid="threat-analysis-group-card"
+            data={normalizedThreatData}
+            delay={threatAnalysisDelay}
+            highlightedSeverity={highlightedSeverity}
+            analyticsEvent={SAFE_SHIELD_EVENTS.THREAT_ANALYZED}
+            requestId={threatResults?.request_id}
+          />
 
           {!contractLoading && !threatLoading && (
             <TenderlySimulation

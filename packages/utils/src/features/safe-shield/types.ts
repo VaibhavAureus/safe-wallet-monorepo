@@ -8,6 +8,7 @@ export enum Severity {
   INFO = 'INFO', // Informational notice
   WARN = 'WARN', // Potential risk requiring attention
   CRITICAL = 'CRITICAL', // High-risk situation requiring immediate review
+  ERROR = 'ERROR', // Error occurred while fetching analysis
 }
 
 export enum StatusGroup {
@@ -26,7 +27,10 @@ export type StatusGroupType<T extends StatusGroup> = {
   [StatusGroup.COMMON]: CommonSharedStatus.FAILED
   [StatusGroup.ADDRESS_BOOK]: RecipientStatus.KNOWN_RECIPIENT | RecipientStatus.UNKNOWN_RECIPIENT
   [StatusGroup.RECIPIENT_ACTIVITY]: RecipientStatus.LOW_ACTIVITY | CommonSharedStatus.FAILED
-  [StatusGroup.RECIPIENT_INTERACTION]: RecipientStatus.NEW_RECIPIENT | RecipientStatus.RECURRING_RECIPIENT | CommonSharedStatus.FAILED
+  [StatusGroup.RECIPIENT_INTERACTION]:
+    | RecipientStatus.NEW_RECIPIENT
+    | RecipientStatus.RECURRING_RECIPIENT
+    | CommonSharedStatus.FAILED
   [StatusGroup.BRIDGE]:
     | BridgeStatus.INCOMPATIBLE_SAFE
     | BridgeStatus.MISSING_OWNERSHIP
@@ -39,7 +43,10 @@ export type StatusGroupType<T extends StatusGroup> = {
     | ContractStatus.NOT_VERIFIED_BY_SAFE
     | ContractStatus.VERIFICATION_UNAVAILABLE
     | CommonSharedStatus.FAILED
-  [StatusGroup.CONTRACT_INTERACTION]: ContractStatus.KNOWN_CONTRACT | ContractStatus.NEW_CONTRACT | CommonSharedStatus.FAILED
+  [StatusGroup.CONTRACT_INTERACTION]:
+    | ContractStatus.KNOWN_CONTRACT
+    | ContractStatus.NEW_CONTRACT
+    | CommonSharedStatus.FAILED
   [StatusGroup.DELEGATECALL]: ContractStatus.UNEXPECTED_DELEGATECALL | CommonSharedStatus.FAILED
   [StatusGroup.THREAT]:
     | ThreatStatus.MALICIOUS
@@ -85,6 +92,7 @@ export enum ThreatStatus {
   OWNERSHIP_CHANGE = 'OWNERSHIP_CHANGE', // 9F
   MODULE_CHANGE = 'MODULE_CHANGE', // 9G
   UNOFFICIAL_FALLBACK_HANDLER = 'UNOFFICIAL_FALLBACK_HANDLER', // 9H
+  HYPERNATIVE_GUARD = 'HYPERNATIVE_GUARD', // used only for Safes with Hypernative Guard installed
 }
 
 export enum CommonSharedStatus {
@@ -98,7 +106,11 @@ export type AnalysisResult<T extends AnyStatus = AnyStatus> = {
   type: T
   title: string
   description: string
-  addresses?: string[]
+  addresses?: {
+    address: string
+    name?: string
+    logoUrl?: string
+  }[]
 }
 
 export type MasterCopyChangeThreatAnalysisResult = AnalysisResult<ThreatStatus.MASTERCOPY_CHANGE> & {
@@ -108,9 +120,14 @@ export type MasterCopyChangeThreatAnalysisResult = AnalysisResult<ThreatStatus.M
   after: string
 }
 
+export type ThreatIssue = {
+  description: string
+  address?: string
+}
+
 export type MaliciousOrModerateThreatAnalysisResult = AnalysisResult<ThreatStatus.MALICIOUS | ThreatStatus.MODERATE> & {
   /** A potential map of specific issues identified during threat analysis, grouped by severity */
-  issues?: { [severity in Severity]?: string[] }
+  issues?: { [severity in Severity]?: ThreatIssue[] }
 }
 
 export type ThreatAnalysisResult =
@@ -139,14 +156,24 @@ export type RecipientAnalysisResults = {
   }
 }
 
+export type ContractDetails = {
+  name: string
+  logoUrl: string
+}
+
 export type ContractAnalysisResults = {
-  [address: string]: GroupedAnalysisResults<
-    StatusGroup.CONTRACT_VERIFICATION | StatusGroup.CONTRACT_INTERACTION | StatusGroup.DELEGATECALL | StatusGroup.COMMON
-  >
+  [address: string]: ContractDetails &
+    GroupedAnalysisResults<
+      | StatusGroup.CONTRACT_VERIFICATION
+      | StatusGroup.CONTRACT_INTERACTION
+      | StatusGroup.DELEGATECALL
+      | StatusGroup.COMMON
+    >
 }
 
 export type ThreatAnalysisResults = {
   [StatusGroup.COMMON]?: AnalysisResult<CommonSharedStatus.FAILED>[]
   THREAT?: ThreatAnalysisResult[]
   BALANCE_CHANGE?: BalanceChangeDto[]
+  request_id?: string
 }

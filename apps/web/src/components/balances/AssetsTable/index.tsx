@@ -20,6 +20,7 @@ import { useVisibleBalances } from '@/hooks/useVisibleBalances'
 import { AssetRowContent } from './AssetRowContent'
 import { ActionButtons } from './ActionButtons'
 import TokenAmount from '@/components/common/TokenAmount'
+import { HiddenTokensInfo } from './HiddenTokensInfo'
 
 const skeletonCells: EnhancedTableProps['rows'][0]['cells'] = {
   asset: {
@@ -83,9 +84,11 @@ const skeletonRows: EnhancedTableProps['rows'] = Array(3).fill({ cells: skeleton
 const AssetsTable = ({
   showHiddenAssets,
   setShowHiddenAssets,
+  onOpenManageTokens,
 }: {
   showHiddenAssets: boolean
   setShowHiddenAssets: (hidden: boolean) => void
+  onOpenManageTokens?: () => void
 }): ReactElement => {
   const headCells = [
     {
@@ -109,9 +112,7 @@ const AssetsTable = ({
       id: 'weight',
       label: (
         <Tooltip title="Based on total portfolio value">
-          <Typography variant="caption" letterSpacing="normal" color="primary.light">
-            Weight
-          </Typography>
+          <span>Weight</span>
         </Tooltip>
       ),
       width: '23%',
@@ -145,8 +146,11 @@ const AssetsTable = ({
 
   const visible = useVisibleAssets()
   const visibleAssets = showHiddenAssets ? balances.items : visible
-  const hasNoAssets = !loading && balances.items.length === 1 && balances.items[0].balance === '0'
+  const hasNoAssets =
+    !loading && (balances.items.length === 0 || (balances.items.length === 1 && balances.items[0].balance === '0'))
   const selectedAssetCount = visibleAssets?.filter((item) => isAssetSelected(item.tokenInfo.address)).length || 0
+
+  const tokensFiatTotal = visibleBalances.tokensFiatTotal ? Number(visibleBalances.tokensFiatTotal) : undefined
 
   const rows = loading
     ? skeletonRows
@@ -154,8 +158,7 @@ const AssetsTable = ({
         const rawFiatValue = parseFloat(item.fiatBalance)
         const rawPriceValue = parseFloat(item.fiatConversion)
         const isSelected = isAssetSelected(item.tokenInfo.address)
-        const fiatTotal = visibleBalances.fiatTotal ? Number(visibleBalances.fiatTotal) : undefined
-        const itemShareOfFiatTotal = fiatTotal ? Number(item.fiatBalance) / fiatTotal : null
+        const itemShareOfFiatTotal = tokensFiatTotal ? Number(item.fiatBalance) / tokensFiatTotal : null
 
         return {
           key: item.tokenInfo.address,
@@ -204,23 +207,9 @@ const AssetsTable = ({
             weight: {
               rawValue: itemShareOfFiatTotal,
               content: itemShareOfFiatTotal ? (
-                <Box textAlign="right">
-                  <Stack direction="row" alignItems="center" gap={0.5} position="relative" display="inline-flex">
-                    <div className={css.customProgress}>
-                      <div
-                        className={css.progressRing}
-                        style={
-                          {
-                            '--progress': `${(itemShareOfFiatTotal * 100).toFixed(1)}%`,
-                          } as React.CSSProperties & { '--progress': string }
-                        }
-                      />
-                    </div>
-                    <Typography variant="body2" sx={{ minWidth: '52px', textAlign: 'right' }}>
-                      {formatPercentage(itemShareOfFiatTotal)}
-                    </Typography>
-                  </Stack>
-                </Box>
+                <Typography variant="body2" textAlign="right">
+                  {formatPercentage(itemShareOfFiatTotal)}
+                </Typography>
               ) : (
                 <></>
               ),
@@ -310,11 +299,19 @@ const AssetsTable = ({
                   </Box>
                 ))}
           </Box>
+          <Box sx={{ pt: 2, pb: 2 }}>
+            <HiddenTokensInfo onOpenManageTokens={onOpenManageTokens} />
+          </Box>
         </Card>
       ) : (
         <Card sx={{ px: 2, mb: 2 }}>
           <div className={classNames(css.container, { [css.containerWideActions]: showHiddenAssets })}>
-            <EnhancedTable rows={rows} headCells={headCells} compact />
+            <EnhancedTable
+              rows={rows}
+              headCells={headCells}
+              compact
+              footer={<HiddenTokensInfo onOpenManageTokens={onOpenManageTokens} />}
+            />
           </div>
         </Card>
       )}

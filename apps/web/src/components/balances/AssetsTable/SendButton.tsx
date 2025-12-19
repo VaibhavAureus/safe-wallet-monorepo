@@ -1,14 +1,14 @@
 import { useContext } from 'react'
 import { type Balance } from '@safe-global/store/gateway/AUTO_GENERATED/balances'
 import { Button, IconButton, Tooltip, SvgIcon } from '@mui/material'
-import ArrowIconNW from '@/public/images/common/arrow-top-right.svg'
+import ArrowIconNW from '@/public/images/common/arrow-up-right.svg'
 import CheckWallet from '@/components/common/CheckWallet'
 import useSpendingLimit from '@/hooks/useSpendingLimit'
 import Track from '@/components/common/Track'
 import { ASSETS_EVENTS } from '@/services/analytics/events/assets'
 import { TokenTransferFlow } from '@/components/tx-flow/flows'
 import { TxModalContext } from '@/components/tx-flow'
-import css from './styles.module.css'
+import css from '@/components/common/AssetActionButton/styles.module.css'
 
 const SendButton = ({
   tokenInfo,
@@ -31,14 +31,15 @@ const SendButton = ({
       {(isOk) => (
         <Track {...ASSETS_EVENTS.SEND}>
           {onlyIcon ? (
-            <Tooltip title="Send" placement="top" arrow>
+            <Tooltip title={isOk ? 'Send' : ''} placement="top" arrow>
               <span>
                 <IconButton
                   data-testid="send-button"
                   onClick={onSendClick}
                   disabled={!isOk}
                   size="small"
-                  className={css.iconButton}
+                  aria-label="Send"
+                  className={css.assetActionIconButton}
                 >
                   <SvgIcon component={ArrowIconNW} inheritViewBox />
                 </IconButton>
@@ -53,7 +54,7 @@ const SendButton = ({
               startIcon={<ArrowIconNW />}
               onClick={onSendClick}
               disabled={!isOk}
-              className={css.mobileButton}
+              className={css.sendButton}
             >
               Send
             </Button>

@@ -1,4 +1,4 @@
-import { type ReactElement, useMemo, useState, useEffect } from 'react'
+import { type ReactElement, useMemo, useState, useEffect, useRef } from 'react'
 import { Box, Typography, Stack, IconButton, Collapse } from '@mui/material'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 
@@ -12,17 +12,27 @@ import { getPrimaryAnalysisResult } from '@safe-global/utils/features/safe-shiel
 import { SeverityIcon } from '../SeverityIcon'
 import { AnalysisGroupCardItem } from './AnalysisGroupCardItem'
 import { DelegateCallCardItem } from './DelegateCallCardItem'
+import { type AnalyticsEvent, MixpanelEventParams, trackEvent } from '@/services/analytics'
+import isEmpty from 'lodash/isEmpty'
 
 interface AnalysisGroupCardProps {
   data: { [address: string]: GroupedAnalysisResults }
+  showImage?: boolean
   highlightedSeverity?: Severity
   delay?: number
+  analyticsEvent?: AnalyticsEvent
+  'data-testid'?: string
+  requestId?: string
 }
 
 export const AnalysisGroupCard = ({
   data,
+  showImage,
   highlightedSeverity,
   delay = 0,
+  analyticsEvent,
+  'data-testid': dataTestId,
+  requestId,
 }: AnalysisGroupCardProps): ReactElement | null => {
   const [isOpen, setIsOpen] = useState(false)
   const [isVisible, setIsVisible] = useState(false)
@@ -31,21 +41,39 @@ export const AnalysisGroupCard = ({
   const primaryResult = useMemo(() => getPrimaryAnalysisResult(data), [data])
   const primarySeverity = primaryResult?.severity
   const isHighlighted = !highlightedSeverity || primarySeverity === highlightedSeverity
+  const isDataEmpty = useMemo(() => isEmpty(data), [data])
 
   useEffect(() => {
-    if (!primaryResult) return
+    if (!primaryResult || isDataEmpty) {
+      setIsVisible(false)
+      return
+    }
 
     setTimeout(() => {
       setIsVisible(true)
     }, delay)
-  }, [delay, primaryResult])
+  }, [delay, primaryResult, isDataEmpty])
 
-  if (!primaryResult) {
+  // Track analytics event when results change
+  const prevTrackedResultsKeyRef = useRef<string>('')
+  useEffect(() => {
+    if (analyticsEvent && visibleResults.length > 0) {
+      const titles = visibleResults.map((result) => result.title)
+      const key = JSON.stringify(titles)
+      if (key !== prevTrackedResultsKeyRef.current) {
+        trackEvent(analyticsEvent, { [MixpanelEventParams.RESULT]: titles })
+        prevTrackedResultsKeyRef.current = key
+      }
+    }
+  }, [analyticsEvent, visibleResults])
+
+  if (!primaryResult || isDataEmpty) {
     return null
   }
 
   return (
     <Box
+      data-testid={dataTestId}
       sx={{
         overflow: 'hidden',
         opacity: isVisible ? 1 : 0,
@@ -97,9 +125,11 @@ export const AnalysisGroupCard = ({
 
               return (
                 <AnalysisGroupCardItem
+                  showImage={showImage}
                   severity={shouldHighlight ? result.severity : undefined}
                   key={index}
                   result={result}
+                  requestId={requestId}
                 />
               )
             })}
